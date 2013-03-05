@@ -1,25 +1,53 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/hello_world"
-        tools:context=".PongvCActivity" />
-
-    <ImageView
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    android:background="@android:color/black"
+    android:weightSum="1">
+    <ImageView 
         android:id="@+id/pong_logo"
+        android:src="@drawable/pong"
+        android:contentDescription="@string/description_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dip"
+        android:layout_gravity="center"
         android:layout_marginTop="40dip"
-        android:contentDescription="@string/description_logo"
-        android:src="@drawable/pong" />
-
-</RelativeLayout>
+        android:layout_marginBottom="50dip"/>
+    <TextView 
+        android:id="@+id/play_button"
+        android:text="@string/menu_play" 
+        android:textAppearance="?android:attr/textAppearanceLargeInverse"
+        android:background="@drawable/button_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="30dip"/>
+    <TextView 
+        android:id="@+id/options_button"
+        android:text="@string/menu_options" 
+        android:textAppearance="?android:attr/textAppearanceLargeInverse"
+        android:background="@drawable/button_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="30dip"/>
+    <TextView 
+        android:id="@+id/exit_button"
+        android:text="@string/menu_exit" 
+        android:textAppearance="?android:attr/textAppearanceLargeInverse"
+        android:background="@drawable/button_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+    <ImageView
+        android:id="@+id/imageView1"
+        android:src="@drawable/vc"
+        android:contentDescription="@string/description_firma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dip"/>
+</LinearLayout>

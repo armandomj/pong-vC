@@ -8,5 +8,6 @@
     <string name="menu_options">Opciones</string>
     <string name="menu_exit">Salir</string>
     <string name="description_logo">Logo del juego</string>
+    <string name="description_firma">Firma de la web del tutorial</string>
 
 </resources>
