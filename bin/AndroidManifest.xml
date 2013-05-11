@@ -13,7 +13,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".PongvCActivity"
-            android:label="@string/title_activity_pongv_c" >
+            android:label="@string/title_activity_pongv_c" 
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
