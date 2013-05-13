@@ -4,7 +4,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -15,20 +14,29 @@ import android.widget.Toast;
 
 public class PongvCActivity extends Activity {
 	
+	//This procedure start the new activity using an intent.
+    private void empiezaJuego() {
+    	//The constructor of the intent receive who create the activity and which type of class is the new activity.
+    	Intent juego = new Intent(this, PongJuego.class);
+    	this.startActivity(juego);
+    }
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Quitamo el título de la aplicación.
+        //Take off the title of the application.
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        //Ponemos la pantalla completa, quitamos barra de notificaciones.
+        //Put the screen on full screen, take off the notification bar (clock, battery, etc).
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //setContentView say what must to show on the screen, in that case we show a layout define on xml.
         setContentView(R.layout.activity_pongv_c);
         
     	//Creamos la variable que contiene el area que usaremos como boton de Jugar.
     	TextView play = (TextView)findViewById(R.id.play_button);
     	play.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Toast.makeText(getApplicationContext(), R.string.menu_play, Toast.LENGTH_SHORT).show();				
+				Toast.makeText(getApplicationContext(), R.string.menu_play, Toast.LENGTH_SHORT).show();
+				empiezaJuego();
 			}
 		});
     	
