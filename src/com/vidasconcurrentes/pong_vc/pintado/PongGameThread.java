@@ -1,5 +1,6 @@
 package com.vidasconcurrentes.pong_vc.pintado;
 
+import android.annotation.SuppressLint;
 import android.graphics.Canvas;
 import android.view.SurfaceHolder;
 
@@ -21,6 +22,7 @@ public class PongGameThread extends Thread {
 		this.run = run;
 	}
 	
+	@SuppressLint("WrongCall")//This one is because i can't call method onDraw.
 	@Override
 	public void run() {
 		Canvas canvas;
@@ -30,7 +32,8 @@ public class PongGameThread extends Thread {
 				canvas = sh.lockCanvas(null);
 				synchronized(sh) {
 					view.onDraw(canvas);
-				}
+				}				
+			} catch (NullPointerException e) {				
 			} finally {
 				if(canvas != null) {
 					sh.unlockCanvasAndPost(canvas);
